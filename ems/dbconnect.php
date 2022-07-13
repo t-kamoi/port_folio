@@ -1,13 +1,6 @@
 <?php
-		$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-		$server = $url["host"];
-		$username = $url["user"];
-		$password = $url["pass"];
-		$db = substr($url["path"], 1);
-
 	try{
-		$conn = new PDO($server, $username, $password, $db);
-		$conn -> set_charset('utf8');
+		$db=new PDO('mysql:dbname=heroku_c5e50f79a7ca84c;host=us-cdbr-east-05.cleardb.net;charset=utf-8','b6a593ac39066f','019b21d7');
 	} catch(PDOException $e){
 		echo 'DB接続エラー：' . $e -> getMessage();
 	}
