@@ -4,7 +4,7 @@
 		$username = $url["user"];
 		$password = $url["pass"];
 		$db = substr($url["path"], 1);
-
+		
 	try{
 		$db=new PDO($server, $username, $password, $db);
 		$db->set_charset('utf8');
